@@ -41,12 +41,13 @@ RAG / GraphRAG   Agents      Evaluation
 7. **Model adaptation & MLOps** — Small-scale LoRA experiments, tracking, and deployment.
 8. **Computer vision (future)** — Explore industrial inspection and robotics applications.
 
-All components are planned; implementation status will be updated as work progresses.
+The platform components above remain planned. Initial local MLX inference has been exercised manually; see the benchmark record below.
 
 ## Engineering principles
 
 - Start with a working baseline before adding complexity.
 - Record metrics and methodology; never invent benchmark results.
+- Keep only one inference model loaded at a time across local runtimes; unload it before loading another.
 - Document failures, trade-offs, and reproducible setup steps.
 - Keep secrets, private datasets, model weights, and large artifacts out of Git.
 - Favor modular services and testable interfaces.
@@ -59,11 +60,12 @@ All components are planned; implementation status will be updated as work progre
 - [ ] Install Apple Command Line Tools
 - [ ] Configure Git and Python development environment
 - [ ] Set up external NVMe model storage
-- [ ] Run first local model and record benchmark
+- [x] Run first local model and record benchmark (two manual Ornith MLX observations; methodology limitations documented)
 - [ ] Publish first technical milestone
 
 ## Documentation
 
 - [Roadmap](docs/ROADMAP.md)
+- [Ornith 1.5 9B MLX 6-bit: initial manual benchmarks](docs/benchmarks/ornith-1.5-9b-mlx-6bit.md)
 
 > This is a learning and engineering portfolio. Performance and reliability claims will be backed by reproducible experiments.
